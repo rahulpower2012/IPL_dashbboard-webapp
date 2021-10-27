@@ -38,6 +38,12 @@ public class TeamController {
         return team;
     }
 
+    @GetMapping("/team")
+    public Iterable<Team> getAllTeams(){
+        return this.teamRepository.findAll();
+    }
+
+
     @GetMapping("/team/{teamName}/matches")
     public List<Match> getMatchesForTeam(@PathVariable String teamName, @RequestParam int year){
 
